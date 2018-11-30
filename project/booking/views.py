@@ -43,7 +43,14 @@ def payment_gateway(request):
 
         form = BookingForm()
 
-        price_rate = 1000 #Yes.
+        price_rate = 0
+        if seat_type == 'Platinum':
+            price_rate = 500 #Yes.
+        elif seat_type == 'Gold':
+            price_rate = 400
+        else:
+            price_rate = 300
+
         ticket_price = price_rate * len(book_seat)
 
         #Creating the seat string.
