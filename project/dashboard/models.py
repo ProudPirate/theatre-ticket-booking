@@ -6,6 +6,8 @@ import stripe
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 # Create your models here.
+
+
 class dashboard(models.Model):
 	username = models.CharField(max_length = 100)
 	user = models.OneToOneField(settings.AUTH_USER_MODEL,null=True,blank=True) #Note.imp.
@@ -15,6 +17,7 @@ class dashboard(models.Model):
 
 	def __unicode__(self):  #used to display username on admin pages.
 		return self.username
+
 
 class stripeUser(models.Model):
 	user = models.OneToOneField(settings.AUTH_USER_MODEL)

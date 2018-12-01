@@ -28,8 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['192.168.0.102', '127.0.0.1']
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'mraduldubeymd19@gmail.com'
-EMAIL_HOST_PASSWORD = 'xxxxxxxxxxxxxxxxx'
+EMAIL_HOST_USER = 'production.dummymail@gmail.com'
+EMAIL_HOST_PASSWORD = 'internet9841'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 
