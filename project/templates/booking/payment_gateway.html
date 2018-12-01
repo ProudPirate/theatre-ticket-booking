@@ -1,89 +1,97 @@
 {% extends "common/base.html" %}
 {% load crispy_forms_tags %}
 {% block title %}
-<title>Theatre | Payment
-</title>
+    <title>Theatre | Payment
+    </title>
 {% endblock %}
 {% block content %}
-<h1>Booking Details</h1>
-<div class="booking">
-   <form method="post" action="{% url 'payment_confirmation' %}">
-      {% csrf_token %}
-      <input type="hidden" id="show_id" name="show_id" value="{{ show.id }}" size="65" style="border: 0px solid">
-      <table>
-         <tr>
-            <td>
-               Movie:
-            </td>
-            <td>
-               <input id="movie" name="movie" value="{{ show.movie }}" readonly size="65" style="border: 0px solid" >
-            </td>
-         </tr>
-         <tr>
-            <td>
-               Theatre:
-            </td>
-            <td>
-               <input id="theatre" name="theatre" value="{{ show.theatre }}"  readonly size="65" style="border: 0px solid" >
-            </td>
-         </tr>
-         <tr>
-            <td>
-               Screen No:&nbsp&nbsp
-            </td>
-            <td>
-               <input id="screen" name="screen" value="{{ show.screen }}"  readonly size="65" style="border: 0px solid" >
-            </td>
-         </tr>
-         <tr>
-            <td>
-               Showtime:&nbsp&nbsp
-            </td>
-            <td>
-               <input id="showtime" name="showtime" value="{{ show.time }}"  readonly size="65" style="border: 0px solid" >
-            </td>
-         </tr>
-         <tr>
-            <td>
-               Date:&nbsp&nbsp
-            </td>
-            <td>
-               <input id="date" name="date" value="{{ show.date }}"  readonly size="65" style="border: 0px solid" >
-            </td>
-         </tr>
-         <tr>
-            <td>
-               Seats:&nbsp&nbsp
-            </td>
-            <td>
-               <input id="selected_seat" name="selected_seat" value="{{ seats }}"  readonly size="65" style="border: 0px solid" >
-            </td>
-         </tr>
-         <tr>
-            <td>
-               Seat Type:&nbsp&nbsp
-            </td>
-            <td>
-               <input id="seat_type" name="seat_type" value="{{ seat_type }}"  readonly size="65" style="border: 0px solid" >
-            </td>
-         </tr>
-         <tr>
-            <td>
-               Payable Amount:&nbsp&nbsp
-            </td>
-            <td>
-               <input id="amount" name="amount" value="{{ ticket_price }}"  readonly size="65" style="border: 0px solid" >
-            </td>
-         </tr>
-         <tr>
-            <td>
-            </td>
-            <td>
-            </td>
-         </tr>
-      </table>
-      {{ form|crispy }}
-      <button type="submit">Pay</button>
-   </form>
-</div>
+    <h1>Booking Details</h1>
+    <div class="booking">
+        <form method="post" action="{% url 'payment_confirmation' %}">
+            {% csrf_token %}
+            <input type="hidden" id="show_id" name="show_id" value="{{ show.id }}" size="65" style="border: 0px solid">
+            <table>
+                <tr>
+                    <td>
+                        Movie:
+                    </td>
+                    <td>
+                        <input id="movie" name="movie" value="{{ show.movie }}" readonly size="65"
+                               style="border: 0px solid">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Theatre:
+                    </td>
+                    <td>
+                        <input id="theatre" name="theatre" value="{{ show.theatre }}" readonly size="65"
+                               style="border: 0px solid">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Screen No:&nbsp&nbsp
+                    </td>
+                    <td>
+                        <input id="screen" name="screen" value="{{ show.screen }}" readonly size="65"
+                               style="border: 0px solid">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Showtime:&nbsp&nbsp
+                    </td>
+                    <td>
+                        <input id="showtime" name="showtime" value="{{ show.time }}" readonly size="65"
+                               style="border: 0px solid">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Date:&nbsp&nbsp
+                    </td>
+                    <td>
+                        <input id="date" name="date" value="{{ show.date }}" readonly size="65"
+                               style="border: 0px solid">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Seats:&nbsp&nbsp
+                    </td>
+                    <td>
+                        <input id="selected_seat" name="selected_seat" value="{{ seats }}" readonly size="65"
+                               style="border: 0px solid">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Seat Type:&nbsp&nbsp
+                    </td>
+                    <td>
+                        <input id="seat_type" name="seat_type" value="{{ seat_type }}" readonly size="65"
+                               style="border: 0px solid">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Payable Amount:&nbsp&nbsp
+                    </td>
+                    <td>
+                        <input id="amount" name="amount" value="{{ ticket_price }}" readonly size="65"
+                               style="border: 0px solid">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+            {#      {{ form|crispy }}#}
+            <button type="submit">Book</button>
+        </form>
+    </div>
 {% endblock %}
